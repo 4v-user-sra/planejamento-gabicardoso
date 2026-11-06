@@ -41,12 +41,18 @@ export const presentationData = {
         "titulo": "Sumário Executivo",
         "itens_agenda": [
           "Diferenciais Inegociáveis",
-          "Análise de Canais",
-          "Identidade Visual",
-          "Objetivo SMART e KPIs",
-          "Arquitetura do Funil",
-          "Estratégia de Campanhas",
-          "Workflow de Aprovações"
+          "Análise de Canais & Raio-X Meta Ads",
+          "4 Ps de Marketing & Análise SWOT",
+          "Matriz CVBA & Matriz de Ofertas",
+          "Benchmarking e Concorrência",
+          "Identidade Visual & Manual de Copy",
+          "Personas e Público-Alvo",
+          "Objetivo SMART (60 Dias) & KPIs",
+          "Drawflow Funil Fast Traffic (Meses 1-2)",
+          "Visão 3 a 6 Meses (Escala Robusta & Comunidade)",
+          "Cronograma de Entregas & Playbook",
+          "Projeção Integrada de Cenários & Funil Comercial",
+          "Riscos, Dependências & Próximos Passos"
         ]
       }
     },
@@ -225,6 +231,128 @@ export const presentationData = {
       }
     },
     {
+      "id": "08b_marketing_4ps_swot",
+      "slide_type": "marketing_4ps_swot",
+      "content_slots": {
+        "titulo": "Fundamentos de Marketing: Os 4 Ps & Análise SWOT (FOFA)",
+        "subtitulo": "Estruturação estratégica dos pilares do produto e matriz de forças, oportunidades, fraquezas e ameaças",
+        "4ps": {
+          "produto": {
+            "titulo": "Produto",
+            "descricao": "Enxovais bordados 100% personalizados para bebê (Kits 1 ao 4). Tecidos nobres com forro de fralda, acabamento refinado e essência olfativa própria, despachados em 2 dias úteis."
+          },
+          "preco": {
+            "titulo": "Preço",
+            "descricao": "Tíquete médio de R$ 250,00 (Kits de R$ 130 a R$ 330 + Adicionais de R$ 20 a R$ 25). Pagamento 100% na entrada via Pix com confirmação ou até 12x no cartão."
+          },
+          "praca": {
+            "titulo": "Praça",
+            "descricao": "Venda direta nacional via WhatsApp Business + Landing Page interativa. Ateliê centralizado com logística rápida via Correios e Jadlog."
+          },
+          "promocao": {
+            "titulo": "Promoção",
+            "descricao": "Tráfego pago contínuo no Meta Ads (Instagram/Facebook) com criativos reais sem filtro, prova social de 226k seguidores e cheirinho exclusivo de bebê."
+          }
+        },
+        "swot": {
+          "forcas": [
+            "10 anos de tradição da Gabi e do Maicon mostrando a rotina real",
+            "Comunidade engajada com 226k+ seguidores orgânicos no Instagram",
+            "Agilidade imbatível: Envio em 2 dias úteis vs. 15-30 dias do mercado",
+            "Experiência sensorial com o 'Cheirinho Gabi Cardoso' no unboxing",
+            "Custo por conversa validado e barato (~R$ 3,00 a R$ 4,00 no WhatsApp)"
+          ],
+          "oportunidades": [
+            "Automação comercial SDR IA 24/7 para zerar tempo de resposta",
+            "Acompanhamento de etapas e etiquetagem completa no Kommo CRM",
+            "Disparos de recaptação e Comunidade VIP de Mães no WhatsApp",
+            "Programa 'Indique uma Amiga Gestante' (Recompra e indicação)",
+            "Catálogo virtual interativo 'Monte seu Enxoval' para elevar tíquete"
+          ],
+          "fraquezas": [
+            "Atendimento e acompanhamento histórico informal no WhatsApp (sem CRM)",
+            "Pixel do Meta Ads cego sem rastreamento de conversão em compras (CAPI)",
+            "Dependência de tráfego pago concentrado em poucas campanhas",
+            "Tabela de preços antiga em PDF estático sem funil consultivo"
+          ],
+          "ameacas": [
+            "Instabilidade ou bloqueios injustos nas contas de mídia do Meta",
+            "Concorrência de grandes e-commerces industriais com frete grátis",
+            "Aumento nos custos de impressão (CPM) em datas sazonais de fim de ano",
+            "Dependência de atendimento humano para tirar dúvidas de estampas"
+          ]
+        }
+      }
+    },
+    {
+      "id": "08c_matriz_cvba_oferta",
+      "slide_type": "matriz_cvba_oferta",
+      "content_slots": {
+        "titulo": "Matriz CVBA & Estrutura de Ofertas e Bundles",
+        "subtitulo": "Transformação de atributos técnicos em argumentos de vendas de alto impacto e precificação por valor percebido",
+        "cvba_itens": [
+          {
+            "produto": "Kit Coordenado Completo",
+            "caracteristica": "Toalha forrada em fralda nobre, cobertor com capuz temático, naninha e fraldas de boca com mesmo bordado e estampa.",
+            "vantagem": "Harmonia estética perfeita sem precisar comprar itens avulsos descombinados de marcas diferentes.",
+            "beneficio": "Tranquilidade e orgulho de ver o enxoval do bebê 100% alinhado na maternidade e nos ensaios fotográficos.",
+            "hook_anuncio": "'Tudo combinando para a maternidade em 2 dias úteis: Toalha, cobertor temático e naninha bordada com o nome do seu bebê!'"
+          },
+          {
+            "produto": "Produção Express em 2 Dias Úteis",
+            "caracteristica": "Ateliê estruturado com estoque semipronto e bordado computadorizado de alta precisão.",
+            "vantagem": "Envio expresso em 48h úteis (outros ateliês exigem de 15 a 30 dias úteis de espera).",
+            "beneficio": "Zero ansiedade para a mãe que está na reta final da gestação ou precisa do presente urgente a tempo do chá de bebê.",
+            "hook_anuncio": "'Está de 8 meses e ainda não comprou o enxoval? Seu kit personalizado fica pronto e enviado em apenas 2 dias úteis!'"
+          },
+          {
+            "produto": "Cheirinho Gabi Cardoso",
+            "caracteristica": "Essência aromática baby exclusiva borrifada nas peças antes do envio e disponível em frasco avulso.",
+            "vantagem": "Memória olfativa duradoura e unboxing emocionante no recebimento da caixa.",
+            "beneficio": "Sensação imediata de carinho, higiene e luxo afetivo ao abrir a encomenda.",
+            "hook_anuncio": "'A caixa que chega cheirosa na sua casa: O cheirinho de bebê inconfundível que as mães amam!'"
+          }
+        ],
+        "kits_oferta": [
+          {
+            "nome": "Kit 1 - Básico",
+            "itens": "Toalha Forrada + Fralda de Boca Bordada",
+            "preco": "R$ 130,00",
+            "perfil": "Presenteadores, avós e tios que buscam lembrança nobre com valor acessível.",
+            "badge": "Entrada"
+          },
+          {
+            "nome": "Kit 2 - Essencial",
+            "itens": "Toalha Forrada + Cobertor Capuz + Fralda de Boca",
+            "preco": "R$ 220,00",
+            "perfil": "Opção mais procurada por mães no 2º trimestre de gestação.",
+            "badge": "Popular"
+          },
+          {
+            "nome": "Kit 3 - Super Enxoval",
+            "itens": "Toalha Forrada + Cobertor Capuz + Naninha + 2 Fraldas",
+            "preco": "R$ 280,00",
+            "perfil": "Excelente relação custo-benefício para enxoval completo de maternidade.",
+            "badge": "Recomendado"
+          },
+          {
+            "nome": "Kit 4 - Completo Premium",
+            "itens": "Toalha Premium + Cobertor Capuz Temático + Naninha + 3 Fraldas + Cheirinho",
+            "preco": "R$ 330,00",
+            "perfil": "Campeão de faturamento e presente dos sonhos para a maternidade.",
+            "badge": "Mais Vendido"
+          }
+        ],
+        "upsells": [
+          "Tema Extra / Personagem no Capuz: + R$ 20,00 (conversão de 90% dos pedidos)",
+          "Frasco do Cheirinho Gabi Cardoso (Essência): + R$ 25,00 a R$ 30,00",
+          "Capuz Sobressalente / Extra: + R$ 20,00",
+          "Caixa Presenteável Luxo com Laço: + R$ 15,00",
+          "Frete Grátis Incentivado para compras acima de R$ 300,00"
+        ]
+      }
+    },
+    {
       "id": "09_divisor_secao_2",
       "slide_type": "section_divider",
       "content_slots": {
@@ -332,6 +460,67 @@ export const presentationData = {
         "tipografia_principal": "Clássica & Afetiva (Bordado Nobre)",
         "tipografia_secundaria": "Moderna, Acolhedora & Limpa",
         "paleta_cores": ["#AED8F2", "#F7D6DC", "#F3C99F", "#A0C4B8", "#DBDBDB"]
+      }
+    },
+    {
+      "id": "12b_manual_copy_identidade",
+      "slide_type": "manual_copy_identidade",
+      "content_slots": {
+        "titulo": "Manual de Copywriting, Arquétipos & Formatos de Criativos",
+        "subtitulo": "Diretrizes oficiais de comunicação, posicionamento de marca e matriz de formatos para o time criativo",
+        "arquetipos": [
+          {
+            "nome": "O Cuidador / Prestativo (Caregiver)",
+            "papel": "Arquétipo Principal",
+            "descricao": "Acolhimento materno, carinho em cada ponto de bordado, proteção para a pele sensível do recém-nascido e segurança absoluta para a mãe."
+          },
+          {
+            "nome": "O Criador / Artesão (Creator)",
+            "papel": "Arquétipo Secundário",
+            "descricao": "Tradição de 10 anos da família Gabi e Maicon transformando tecidos nobres em obras de arte afetivas e exclusivas com o nome do bebê."
+          }
+        ],
+        "diretrizes_comunicacao": {
+          "tom_de_voz": "Afetivo, Acolhedor, Transparente e Próximo (Papo de família real, sem palavras frias ou impessoais)",
+          "como_falar": "Tratar cada gestante pelo nome próprio no WhatsApp/Direct, entender o momento da gravidez (mês/trimestre) e tranquilizar quanto ao prazo expresso de 2 dias úteis.",
+          "palavras_recomendadas": [
+            "Amor em cada bordado",
+            "Enxoval dos sonhos",
+            "Cheirinho inconfundível de bebê",
+            "Pronto e enviado em 2 dias úteis",
+            "Tecido de fralda nobre 100% algodão",
+            "Feito exclusivamente para o seu bebê"
+          ],
+          "palavras_evitar": [
+            "Produção industrial em massa",
+            "Lote genérico",
+            "Tabela fria de preços",
+            "Prazo longo de 30 dias de espera",
+            "Qualquer expressão impessoal ou burocrática"
+          ]
+        },
+        "formatos_criativos": [
+          {
+            "formato": "Vídeo Curto / Reels (Bastidores & Experiência)",
+            "foco": "Bordado computadorizado funcionando, montagem do kit, aplicação do 'Cheirinho Gabi Cardoso' e unboxing emocionante da caixa.",
+            "funil": "Topo / Meio de Funil"
+          },
+          {
+            "formato": "Foto Real Sem Filtro (Prova Social)",
+            "foco": "Kit Completo 100% montado sobre o berço ou no colo, destacando a textura do tecido e o nome bordado em alta definição.",
+            "funil": "Atração & Conversão"
+          },
+          {
+            "formato": "Carrossel Comparativo (Diferenciais)",
+            "foco": "'Ateliês Tradicionais (15-30 dias úteis de espera) vs. Gabi Cardoso Artesanato (Garantia de despacho em 2 dias úteis)'.",
+            "funil": "Quebra de Objeções"
+          },
+          {
+            "formato": "Criativos de Oferta (Kits & Condições)",
+            "foco": "Apresentação dos Kits 1 ao 4, destaque do parcelamento em até 12x no cartão ou desconto no Pix com envio em 48h.",
+            "funil": "Fundo de Funil / Fechamento"
+          }
+        ]
       }
     },
     {
@@ -476,11 +665,79 @@ export const presentationData = {
       }
     },
     {
+      "id": "18b_drawflow_fase2_longo_prazo",
+      "slide_type": "drawflow_fase2_longo_prazo",
+      "content_slots": {
+        "titulo": "Drawflow Estratégico: Visão de 3 a 6 Meses (Escala Robusta & Inovação)",
+        "subtitulo": "Evolução do Fast Traffic (Meses 1-2) para a Estrutura de Retenção, Disparos de E-mail/Kommo, Comunidade VIP e Recompra (Fev a Mai/2027)",
+        "fases_verticais": [
+          {
+            "fase_numero": "01",
+            "periodo": "Meses 1-2 (Nov/26 - Jan/27)",
+            "titulo_fase": "Fast Traffic & Estruturação Comercial",
+            "foco": "Tração Imediata & Automação do Funil WhatsApp",
+            "cor_badge": "bg-red-600",
+            "topicos": [
+              "Consolidação das 77 campanhas dispersas em 5 eixos fixos no Meta Ads (R$ 30.000/mês)",
+              "Qualificação instantânea com SDR IA 24/7 (<10s) identificando kit, tema e se é presente",
+              "Acompanhamento de etapas e etiquetagem completa no Kommo CRM para zerar perda de leads",
+              "Lançamento da Landing Page interativa 'Monte seu Enxoval' para acelerar a escolha da mãe"
+            ]
+          },
+          {
+            "fase_numero": "02",
+            "periodo": "Meses 3-4 (Fev/27 - Mar/27)",
+            "titulo_fase": "Recaptação de Base & Comunidade Mães Gabi Cardoso",
+            "foco": "Ativação de Base Fria, E-mail Marketing & Comunidade no WhatsApp",
+            "cor_badge": "bg-indigo-600",
+            "topicos": [
+              "Disparos Automáticos Kommo CRM / E-mail: Réguas de contato para gestantes no 3º trimestre (28ª a 36ª semana) que não fecharam no primeiro contato",
+              "Comunidade VIP no WhatsApp ('Clube das Mães Gabi Cardoso'): Grupo de acolhimento com conteúdos afetivos, dicas de maternidade, pré-venda de estampas e ofertas relâmpago de pronta-entrega",
+              "Programa 'Indique uma Amiga Gestante': Benefício de R$ 30,00 de desconto na recompra para clientes que indicarem amigas grávidas do grupo do pré-natal"
+            ]
+          },
+          {
+            "fase_numero": "03",
+            "periodo": "Meses 5-6 (Abr/27 - Mai/27)",
+            "titulo_fase": "Linha Crescimento, Lançamentos Sazonais & Recompra",
+            "foco": "Maximização de LTV & Venda Recorrente do Ateliê",
+            "cor_badge": "bg-emerald-600",
+            "topicos": [
+              "Coleção Outono/Inverno & Chá de Revelação: Oferta de mantas de lã, cobertores mais encorpados e novos temas computadorizados",
+              "Linha Crescimento (Bebê 6 meses a 1 ano): Transição para toalhas de banho infantis maiores com capuz e organizadores de passeio para as mães da base",
+              "Clube do Cheirinho Gabi Cardoso: Disparo automático de refil da essência olfativa favorita para manter a memória afetiva da marca no lar"
+            ]
+          }
+        ],
+        "inovacoes_contextualizadas": [
+          {
+            "titulo": "Disparos Kommo CRM + E-mail por Idade Gestacional",
+            "icone": "Send",
+            "estrategia": "Segmentação por semana de gestação coletada pelo SDR IA (ex: 32ª semana: 'Seu enxoval de maternidade fica pronto em 2 dias úteis').",
+            "impacto": "Resgate de 15% a 20% dos orçamentos parados com custo zero de mídia."
+          },
+          {
+            "titulo": "Comunidade VIP no WhatsApp (Acolhimento & Pronta Entrega)",
+            "icone": "Users",
+            "estrategia": "Grupo exclusivo de mães com conteúdos com pediatras/puericultoras, pré-venda de estampas nobres e liquidação de kits pronta-entrega.",
+            "impacto": "Conversão direta e recorrência no ecossistema sem dependência exclusiva de anúncios."
+          },
+          {
+            "titulo": "Programa Member-Get-Member (Indicação Ativa)",
+            "icone": "Sparkles",
+            "estrategia": "Voucher de R$ 30 na próxima compra quando a mãe indica gestantes do seu círculo de convívio (chá de bebê, ioga pré-natal, amigas).",
+            "impacto": "Geração contínua de leads orgânicos hiperqualificados e redução no CAC."
+          }
+        ]
+      }
+    },
+    {
       "id": "19_cronograma",
       "slide_type": "spreadsheet_placeholder",
       "content_slots": {
         "titulo": "Cronograma de Implementação & Playbook de 90 Dias",
-        "tipo_planilha": "Planejamento Trimestral",
+        "tipo_planilha": "Cronograma de Entregas",
+        "texto_botao": "Acessar Cronograma de Entregas",
         "imagem_url": "https://i.imgur.com/O33sRmV.png",
         "link_planilha": "https://docs.google.com/spreadsheets/d/1CLTGPBkKbrr5eE1gD4u4X9h9gyfBRxjOkHTGxhbj_F8/edit?gid=652949990#gid=652949990"
       }
@@ -489,11 +746,28 @@ export const presentationData = {
       "id": "20_plano_midia",
       "slide_type": "media_projection",
       "content_slots": {
-        "titulo": "Projeção de Cenários para o Próximo Mês (Meta Ads)",
-        "subtitulo": "Base de R$ 30.000/mês e Ticket Médio de R$ 250,00 com taxas de conversão de 10,5% a 13,5%",
+        "titulo": "Projeção Integrada: Cenários de Mídia, Capacidade & Funil Comercial",
+        "subtitulo": "Análise completa do investimento de R$ 30.000/mês no Meta Ads, capacidade operacional do ateliê/SDR e esmiuçamento do funil comercial etapa por etapa",
         "orcamento": "R$ 30.000 / mês",
         "ticket_medio": "R$ 250,00",
         "taxa_referencia": "12,0%",
+        "capacidade_operacional": [
+          {
+            "métrica": "Tempo de Resposta SDR IA",
+            "valor": "< 10 Segundos",
+            "detalhe": "Atendimento instantâneo 24/7 sem perda de leads por demora no primeiro contato."
+          },
+          {
+            "métrica": "Capacidade Comercial / Vendedor",
+            "valor": "150 - 200 Conversas / Dia",
+            "detalhe": "Com triagem prévia do SDR IA e etapas no Kommo CRM, o consultor foca apenas em fechar Pix."
+          },
+          {
+            "métrica": "Capacidade de Produção do Ateliê",
+            "valor": "600 - 1.200 Kits / Mês",
+            "detalhe": "Produção de 20 a 50 kits/dia (1-2 peças complexas/costureira/dia) mantendo o envio em 2 dias úteis."
+          }
+        ],
         "cenarios": [
           {
             "nome": "Conservador",
@@ -535,7 +809,103 @@ export const presentationData = {
             "descricao": "R$ 3,20 por conversa, nível de 'VENDAS cabelo preto' e 'CAMPANHA GABI NOVO1' depois da consolidação."
           }
         ],
+        "funil_esmiucado": [
+          {
+            "etapa": "1. Conversas Iniciadas (Leads Meta Ads)",
+            "conservador": "6.522 / mês (217/dia)",
+            "realista": "7.500 / mês (250/dia)",
+            "otimista": "9.375 / mês (313/dia)",
+            "observacao": "Meta Ads R$ 30.000/mês @ R$ 4,60 / R$ 4,00 / R$ 3,20 por conversa"
+          },
+          {
+            "etapa": "2. Leads Qualificados (MQLs - Respondem SDR IA)",
+            "conservador": "4.891 (75% resposta)",
+            "realista": "6.000 (80% resposta)",
+            "otimista": "7.968 (85% resposta)",
+            "observacao": "Mães e presenteadores que fornecem sexo do bebê, tema e kit de interesse"
+          },
+          {
+            "etapa": "3. Oportunidades Reais (SQLs - Com Orçamento)",
+            "conservador": "1.956 (40% dos MQLs)",
+            "realista": "2.520 (42% dos MQLs)",
+            "otimista": "3.585 (45% dos MQLs)",
+            "observacao": "Leads com orçamento aprovado e modelo/kit selecionado no catálogo"
+          },
+          {
+            "etapa": "4. Propostas Enviadas (Chave Pix / Link Cartão)",
+            "conservador": "1.956 propostas",
+            "realista": "2.520 propostas",
+            "otimista": "3.585 propostas",
+            "observacao": "Envio imediato dos dados bancários / Pix ou link de parcelamento em 12x"
+          },
+          {
+            "etapa": "5. Vendas Fechadas (Pedidos Confirmados)",
+            "conservador": "685 vendas (10,5%)",
+            "realista": "900 vendas (12,0%)",
+            "otimista": "1.266 vendas (13,5%)",
+            "observacao": "Taxa de conversão total sobre o volume de conversas iniciadas"
+          },
+          {
+            "etapa": "6. Faturamento Total Projetado",
+            "conservador": "R$ 171.196,00",
+            "realista": "R$ 225.000,00",
+            "otimista": "R$ 316.406,00",
+            "observacao": "Com Tíquete Médio de R$ 250,00 (Kits de R$ 130 a R$ 330 + Capuz R$ 20)"
+          }
+        ],
         "alcance_estimado": "Com R$ 30.000/mês investidos no Meta Ads, a operação gera de 6.522 a 9.375 conversas no WhatsApp/Direct, alcançando de 685 a 1.266 vendas mensais com faturamento projetado de R$ 171 mil a R$ 316 mil e ROAS de 5,71 a 10,55."
+      }
+    },
+    {
+      "id": "21_riscos_dependencias_proximos_passos",
+      "slide_type": "riscos_dependencias_proximos_passos",
+      "content_slots": {
+        "titulo": "Riscos, Dependências & Próximos Passos (Primeiro Trimestre)",
+        "subtitulo": "Mapeamento dos 4 riscos críticos da operação (impactos e planos de prevenção) e matriz de entregas do 1º Trimestre (Nov-Jan)",
+        "riscos_matriz": [
+          {
+            "risco": "Falta de Feedback do Time Comercial",
+            "impacto": "O time de tráfego não descobre quais anúncios e kits estão convertendo em Pix no WhatsApp, travando a otimização das campanhas.",
+            "prevencao": "Alinhamento semanal rápido e atualização diária das etapas no Kommo CRM entre consultor e gestor de tráfego."
+          },
+          {
+            "risco": "Falta de Envio de Vídeos Novos",
+            "impacto": "Os anúncios campeões começam a cansar no Meta, o custo por conversa sobe e o público perde interesse com o tempo.",
+            "prevencao": "Rotina prática de gravação no ateliê mostrando costura, bordados e unboxing com cheirinho para testar toda semana."
+          },
+          {
+            "risco": "Ausência de Fornecedor / Matéria-Prima",
+            "impacto": "Pausa na produção, risco de não cumprir o envio em 2 dias úteis e cancelamentos de gestantes com parto próximo.",
+            "prevencao": "Contato ativo com fornecedores reservas e estoque de segurança semipronto para cobrir até 30 dias de vendas."
+          },
+          {
+            "risco": "Falta de Verba de Mídia",
+            "impacto": "Queda no aprendizado do Meta Ads, quebra no ritmo diário de mensagens no WhatsApp e redução direta no faturamento.",
+            "prevencao": "Provisionamento prévio dos R$ 30 mil/mês e recargas antecipadas para evitar pausas automáticas na conta."
+          }
+        ],
+        "proximos_passos_trimestre": [
+          {
+            "passo": "Passo 1 (Semana 1-2)",
+            "titulo": "Setup de CRM & Automação SDR IA",
+            "descricao": "Integração do Kommo CRM, criação das etapas e ativação do SDR IA 24/7 no WhatsApp Business."
+          },
+          {
+            "passo": "Passo 2 (Semana 2-3)",
+            "titulo": "Consolidação de Mídia no Meta Ads",
+            "descricao": "Subida dos 5 eixos fixos de campanhas (R$ 30k/mês) e pausa das estruturas antigas fragmentadas."
+          },
+          {
+            "passo": "Passo 3 (Semana 3-4)",
+            "titulo": "LP Institucional Gabi Cardoso",
+            "descricao": "Criação de página institucional contando a história do ateliê, tradição e carinho da marca, focada em branding."
+          },
+          {
+            "passo": "Passo 4 (Mês 2 em Diante)",
+            "titulo": "Laboratório de Criativos & Relatório Mensal",
+            "descricao": "Testes semanais de novos formatos de foto/vídeo, acompanhamento de ROAS e alinhamento mensal de resultados."
+          }
+        ]
       }
     }
   ]

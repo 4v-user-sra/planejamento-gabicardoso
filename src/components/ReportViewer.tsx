@@ -16,10 +16,13 @@ const themeMap: Record<string, string> = {
   "06_analise_site": "bg-zinc-100 text-zinc-900 border-zinc-200",
   "07_analise_meta": "bg-white text-zinc-900 border-zinc-200",
   "08_diferenciais": "bg-zinc-950 text-zinc-300 border-zinc-900",
+  "08b_marketing_4ps_swot": "bg-zinc-50 text-zinc-900 border-zinc-200",
+  "08c_matriz_cvba_oferta": "bg-white text-zinc-900 border-zinc-200",
   "09_divisor_secao_2": "bg-zinc-900 text-zinc-100 border-zinc-800",
   "10_benchmarking_1": "bg-zinc-50 text-zinc-900 border-zinc-200",
   "11_benchmarking_2": "bg-white text-zinc-900 border-zinc-200",
   "12_moodboard": "bg-zinc-200 text-zinc-900 border-zinc-300",
+  "12b_manual_copy_identidade": "bg-zinc-50 text-zinc-900 border-zinc-200",
   "14_persona_1": "bg-zinc-900 text-zinc-300 border-zinc-800",
   "15_persona_2": "bg-zinc-950 text-zinc-300 border-zinc-900",
   "17_objetivo_smart": "bg-black text-zinc-300 border-zinc-900",
@@ -27,18 +30,20 @@ const themeMap: Record<string, string> = {
   "13_estrategia_campanhas": "bg-zinc-50 text-zinc-900 border-zinc-200",
   "21_criativos": "bg-zinc-100 text-zinc-900 border-zinc-200",
   "18_drawflow_funil": "bg-zinc-900 text-zinc-100 border-zinc-800",
+  "18b_drawflow_fase2_longo_prazo": "bg-zinc-900 text-zinc-100 border-zinc-800",
   "19_cronograma": "bg-white text-zinc-900 border-zinc-200",
-  "20_plano_midia": "bg-zinc-50 text-zinc-900 border-zinc-200"
+  "20_plano_midia": "bg-zinc-50 text-zinc-900 border-zinc-200",
+  "21_riscos_dependencias_proximos_passos": "bg-zinc-950 text-zinc-300 border-zinc-900"
 }
 
 // Helper to determine section background based on type
 export function getSectionTheme(id: string, type: string) {
   if (themeMap[id]) return themeMap[id]
   
-  if (['competitor_benchmark', 'campaign_strategy_boxes'].includes(type)) return 'bg-zinc-100 text-zinc-900 border-zinc-200'
-  if (['moodboard_identity', 'spreadsheet_placeholder'].includes(type)) return 'bg-white text-zinc-900 border-zinc-200'
-  if (['process_timeline', 'funnel_flow_diagram', 'visual_drawflow'].includes(type)) return 'bg-black text-zinc-300 border-zinc-900'
-  if (['smart_goal_okr'].includes(type)) return 'bg-zinc-900 text-zinc-300 border-zinc-800'
+  if (['competitor_benchmark', 'campaign_strategy_boxes', 'marketing_4ps_swot', 'manual_copy_identidade'].includes(type)) return 'bg-zinc-100 text-zinc-900 border-zinc-200'
+  if (['moodboard_identity', 'spreadsheet_placeholder', 'matriz_cvba_oferta'].includes(type)) return 'bg-white text-zinc-900 border-zinc-200'
+  if (['process_timeline', 'funnel_flow_diagram', 'visual_drawflow', 'drawflow_fase2_longo_prazo'].includes(type)) return 'bg-black text-zinc-300 border-zinc-900'
+  if (['smart_goal_okr', 'projecao_comercial_detalhada', 'riscos_dependencias_proximos_passos'].includes(type)) return 'bg-zinc-900 text-zinc-300 border-zinc-800'
   return 'bg-zinc-950 text-zinc-300 border-zinc-900'
 }
 
@@ -331,25 +336,361 @@ export function RenderBlock({ slide }: { slide: any }) {
       </div>
     )
   }
-  if (type === 'vertical_feature_list') {
+  if (type === 'marketing_4ps_swot') {
+    const ps = d['4ps'] || {};
+    const swot = d.swot || {};
+
     return (
-      <div>
-        <h2 className={`text-4xl font-bold ${titleColor} text-center mb-16`}>{d.titulo}</h2>
-        <div className="flex flex-col gap-6 max-w-4xl mx-auto">
-          {d.features?.map((f: any, i: number) => (
-            <div key={i} className={`p-8 rounded-2xl border ${cardBg} flex flex-col md:flex-row gap-8 items-start hover:border-red-500/50 transition-colors`}>
-              <div className={`w-16 h-16 shrink-0 rounded-2xl ${isLight ? 'bg-zinc-100 border-zinc-200' : 'bg-zinc-950 border-zinc-800'} flex items-center justify-center shadow-inner`}>
-                <span className="text-2xl font-bold text-red-600">0{i + 1}</span>
-              </div>
-              <div className="flex flex-col gap-3">
-                <h3 className={`text-2xl font-bold ${titleColor}`}>{f.titulo}</h3>
-                <p className={`text-lg ${subtitleColor} leading-relaxed`}>{f.descricao}</p>
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className={`text-4xl font-bold ${titleColor} mb-3`}>{d.titulo}</h2>
+          {d.subtitulo && <p className={`text-base ${subtitleColor}`}>{d.subtitulo}</p>}
+        </div>
+
+        {/* 4 Ps Grid */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <span className="w-8 h-8 rounded-lg bg-red-600 text-white font-mono font-bold flex items-center justify-center text-sm">4P</span>
+            Os 4 Ps do Marketing Gabi Cardoso
+          </h3>
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between border-t-4 border-t-emerald-500 shadow-sm`}>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-2">{ps.produto?.titulo || 'Produto'}</span>
+                <p className={`text-sm ${subtitleColor} leading-relaxed`}>{ps.produto?.descricao}</p>
               </div>
             </div>
-          ))}
+            <div className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between border-t-4 border-t-indigo-500 shadow-sm`}>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 block mb-2">{ps.preco?.titulo || 'Preço'}</span>
+                <p className={`text-sm ${subtitleColor} leading-relaxed`}>{ps.preco?.descricao}</p>
+              </div>
+            </div>
+            <div className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between border-t-4 border-t-blue-500 shadow-sm`}>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-2">{ps.praca?.titulo || 'Praça'}</span>
+                <p className={`text-sm ${subtitleColor} leading-relaxed`}>{ps.praca?.descricao}</p>
+              </div>
+            </div>
+            <div className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between border-t-4 border-t-red-500 shadow-sm`}>
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-red-600 block mb-2">{ps.promocao?.titulo || 'Promoção'}</span>
+                <p className={`text-sm ${subtitleColor} leading-relaxed`}>{ps.promocao?.descricao}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Análise SWOT / FOFA Grid */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Sparkles className="w-5 h-5 text-amber-500" />
+            Análise SWOT / FOFA Matriz Estratégica
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Forças */}
+            <div className={`p-6 rounded-2xl border ${isLight ? 'bg-emerald-50/60 border-emerald-200' : 'bg-emerald-950/20 border-emerald-900/40'} flex flex-col gap-4 shadow-sm`}>
+              <div className="flex items-center gap-2 text-emerald-600 font-bold text-lg border-b pb-3 border-emerald-200 dark:border-emerald-800">
+                <CheckCircle2 className="w-6 h-6" />
+                <span>Forças (Strengths)</span>
+              </div>
+              <ul className="space-y-2.5 text-xs md:text-sm">
+                {swot.forcas?.map((item: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2.5 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-emerald-500 font-bold mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Oportunidades */}
+            <div className={`p-6 rounded-2xl border ${isLight ? 'bg-blue-50/60 border-blue-200' : 'bg-blue-950/20 border-blue-900/40'} flex flex-col gap-4 shadow-sm`}>
+              <div className="flex items-center gap-2 text-blue-600 font-bold text-lg border-b pb-3 border-blue-200 dark:border-blue-800">
+                <Rocket className="w-6 h-6" />
+                <span>Oportunidades (Opportunities)</span>
+              </div>
+              <ul className="space-y-2.5 text-xs md:text-sm">
+                {swot.oportunidades?.map((item: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2.5 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-blue-500 font-bold mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Fraquezas */}
+            <div className={`p-6 rounded-2xl border ${isLight ? 'bg-amber-50/60 border-amber-200' : 'bg-amber-950/20 border-amber-900/40'} flex flex-col gap-4 shadow-sm`}>
+              <div className="flex items-center gap-2 text-amber-600 font-bold text-lg border-b pb-3 border-amber-200 dark:border-amber-800">
+                <AlertTriangle className="w-6 h-6" />
+                <span>Fraquezas (Weaknesses)</span>
+              </div>
+              <ul className="space-y-2.5 text-xs md:text-sm">
+                {swot.fraquezas?.map((item: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2.5 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-amber-500 font-bold mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Ameaças */}
+            <div className={`p-6 rounded-2xl border ${isLight ? 'bg-rose-50/60 border-rose-200' : 'bg-rose-950/20 border-rose-900/40'} flex flex-col gap-4 shadow-sm`}>
+              <div className="flex items-center gap-2 text-rose-600 font-bold text-lg border-b pb-3 border-rose-200 dark:border-rose-800">
+                <ShieldAlert className="w-6 h-6" />
+                <span>Ameaças (Threats)</span>
+              </div>
+              <ul className="space-y-2.5 text-xs md:text-sm">
+                {swot.ameacas?.map((item: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2.5 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-rose-500 font-bold mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    )
+    );
+  }
+
+  if (type === 'matriz_cvba_oferta') {
+    const cvba = d.cvba_itens || [];
+    const kits = d.kits_oferta || [];
+    const upsells = d.upsells || [];
+
+    return (
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto">
+          <h2 className={`text-4xl font-bold ${titleColor} mb-3`}>{d.titulo}</h2>
+          {d.subtitulo && <p className={`text-base ${subtitleColor}`}>{d.subtitulo}</p>}
+        </div>
+
+        {/* Matriz CVBA Cards - 4 Quadrantes por Item com Fundo Claro e Alto Contraste */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Layers className="w-5 h-5 text-red-600" />
+            Matriz CVBA & Atenção (Características, Vantagens, Benefícios & Hooks)
+          </h3>
+          <div className="flex flex-col gap-6">
+            {cvba.map((item: any, i: number) => (
+              <div key={i} className="p-6 rounded-2xl bg-white border border-zinc-200 shadow-md flex flex-col gap-4 text-zinc-900">
+                <div className="flex items-center justify-between border-b pb-3 border-zinc-200">
+                  <div className="flex items-center gap-3">
+                    <span className="w-7 h-7 rounded-lg bg-red-600 text-white font-mono font-bold text-xs flex items-center justify-center">
+                      0{i + 1}
+                    </span>
+                    <h4 className="text-xl font-bold text-zinc-900">{item.produto}</h4>
+                  </div>
+                  <span className="text-xs font-bold text-red-600 uppercase tracking-wider px-3 py-1 bg-red-50 rounded-full border border-red-100">
+                    Matriz 4 Quadrantes
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs md:text-sm">
+                  {/* 1. Característica */}
+                  <div className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 flex flex-col justify-between">
+                    <div>
+                      <span className="text-zinc-500 font-extrabold uppercase text-[10px] block mb-1">
+                        1. Característica (C)
+                      </span>
+                      <p className="text-zinc-900 font-medium leading-relaxed">{item.caracteristica}</p>
+                    </div>
+                  </div>
+
+                  {/* 2. Vantagem */}
+                  <div className="p-4 rounded-xl bg-blue-50/80 border border-blue-200 flex flex-col justify-between">
+                    <div>
+                      <span className="text-blue-700 font-extrabold uppercase text-[10px] block mb-1">
+                        2. Vantagem (V)
+                      </span>
+                      <p className="text-zinc-900 font-medium leading-relaxed">{item.vantagem}</p>
+                    </div>
+                  </div>
+
+                  {/* 3. Benefício Real */}
+                  <div className="p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 flex flex-col justify-between">
+                    <div>
+                      <span className="text-emerald-700 font-extrabold uppercase text-[10px] block mb-1">
+                        3. Benefício Real (B)
+                      </span>
+                      <p className="text-zinc-900 font-medium leading-relaxed">{item.beneficio}</p>
+                    </div>
+                  </div>
+
+                  {/* 4. Atenção (Atração / Hook Anúncio) */}
+                  <div className="p-4 rounded-xl bg-red-50/80 border border-red-200 flex flex-col justify-between">
+                    <div>
+                      <span className="text-red-700 font-extrabold uppercase text-[10px] block mb-1">
+                        4. Atenção (Atração / Hook)
+                      </span>
+                      <p className="text-red-900 font-bold leading-relaxed">{item.hook_anuncio}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Matriz de Ofertas / Kits 1-4 */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <ShoppingCart className="w-5 h-5 text-indigo-500" />
+            Matriz de Oferta & Kits Enxoval Coordenado
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {kits.map((kit: any, i: number) => (
+              <div key={i} className="p-5 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between relative overflow-hidden text-zinc-900">
+                {kit.badge && (
+                  <span className={`absolute top-0 right-0 px-3 py-1 text-[10px] font-extrabold uppercase rounded-bl-xl text-white ${i === 3 ? 'bg-red-600' : 'bg-indigo-600'}`}>
+                    {kit.badge}
+                  </span>
+                )}
+                <div>
+                  <h4 className="text-lg font-bold text-zinc-900 mb-1">{kit.nome}</h4>
+                  <span className="text-2xl font-black text-emerald-600 block mb-3">{kit.preco}</span>
+                  <p className="text-xs text-zinc-600 font-medium leading-relaxed mb-4 pb-3 border-b border-zinc-200">
+                    <strong className="text-zinc-900">Itens:</strong> {kit.itens}
+                  </p>
+                </div>
+                <p className="text-xs text-zinc-500 italic">
+                  {kit.perfil}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Upsells & Adicionais de Tíquete (Fundo Branco Limpo com Alto Contraste) */}
+        <div className="p-6 rounded-2xl bg-white border-2 border-amber-400 shadow-md flex flex-col gap-4 text-zinc-900">
+          <div className="flex items-center gap-2 text-amber-800 font-bold text-base border-b pb-3 border-amber-200">
+            <Zap className="w-5 h-5 text-amber-500 shrink-0" />
+            <span>Adicionais de Tíquete & Alavancas de Upsell (+R$ 20 a R$ 50 por pedido)</span>
+          </div>
+          <div className="grid md:grid-cols-2 gap-3 text-xs md:text-sm">
+            {upsells.map((up: string, i: number) => (
+              <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-900 font-medium shadow-2xs">
+                <span className="w-6 h-6 rounded-full bg-amber-500 text-white font-bold font-mono text-xs flex items-center justify-center shrink-0">
+                  +
+                </span>
+                <span className="text-zinc-900 font-semibold">{up}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === 'manual_copy_identidade') {
+    const arquetipos = d.arquetipos || [];
+    const diretrizes = d.diretrizes_comunicacao || {};
+    const formatos = d.formatos_criativos || [];
+
+    return (
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 text-red-600 font-bold text-xs uppercase tracking-widest mb-3">
+            Guia de Comunicação & Ativos Criativos
+          </span>
+          <h2 className={`text-4xl font-bold ${titleColor} mb-3`}>{d.titulo}</h2>
+          {d.subtitulo && <p className={`text-base ${subtitleColor}`}>{d.subtitulo}</p>}
+        </div>
+
+        {/* 1. Arquétipos & Personalidade da Marca */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Users className="w-5 h-5 text-indigo-500" />
+            1. Arquétipos de Marca & Personalidade
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            {arquetipos.map((arq: any, i: number) => (
+              <div key={i} className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between shadow-sm border-t-4 ${i === 0 ? 'border-t-red-600' : 'border-t-indigo-600'}`}>
+                <div>
+                  <span className="text-xs font-extrabold uppercase tracking-wider text-red-600 block mb-1">{arq.papel}</span>
+                  <h4 className={`text-xl font-bold ${titleColor} mb-3`}>{arq.nome}</h4>
+                  <p className={`text-sm ${subtitleColor} leading-relaxed`}>{arq.descricao}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 2. Diretrizes de Tom de Voz & Palavras a Utilizar vs Evitar */}
+        <div className={`p-8 rounded-3xl border ${cardBg} shadow-xl flex flex-col gap-6`}>
+          <div className="border-b pb-4 border-zinc-200 dark:border-zinc-800">
+            <h3 className={`text-xl font-bold ${titleColor} mb-2`}>
+              2. Tom de Voz & Diretrizes de Comunicação
+            </h3>
+            <p className={`text-sm ${subtitleColor} italic mb-2`}>
+              <strong>Tom oficial:</strong> {diretrizes.tom_de_voz}
+            </p>
+            <p className={`text-xs ${titleColor} leading-relaxed`}>
+              <strong>Como e onde falar:</strong> {diretrizes.como_falar}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Palavras Recomendadas */}
+            <div className={`p-5 rounded-2xl border ${isLight ? 'bg-emerald-50/70 border-emerald-200' : 'bg-emerald-950/20 border-emerald-900/40'} flex flex-col gap-3`}>
+              <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm">
+                <CheckCircle2 className="w-5 h-5" />
+                <span>Palavras & Expressões Recomendadas</span>
+              </div>
+              <ul className="space-y-2 text-xs md:text-sm">
+                {diretrizes.palavras_recomendadas?.map((palavra: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-emerald-500 font-bold">•</span>
+                    <span>{palavra}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Palavras a Evitar */}
+            <div className={`p-5 rounded-2xl border ${isLight ? 'bg-rose-50/70 border-rose-200' : 'bg-rose-950/20 border-rose-900/40'} flex flex-col gap-3`}>
+              <div className="flex items-center gap-2 text-rose-600 font-bold text-sm">
+                <Ban className="w-5 h-5" />
+                <span>Expressões a Evitar Absolutamente</span>
+              </div>
+              <ul className="space-y-2 text-xs md:text-sm">
+                {diretrizes.palavras_evitar?.map((palavra: string, i: number) => (
+                  <li key={i} className={`flex items-start gap-2 ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                    <span className="text-rose-500 font-bold">•</span>
+                    <span>{palavra}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. Matriz de Formatos de Criativos */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Video className="w-5 h-5 text-red-600" />
+            3. Matriz e Formatos de Criativos (Direcionamento do Ateliê)
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {formatos.map((f: any, i: number) => (
+              <div key={i} className={`p-5 rounded-2xl border ${cardBg} flex flex-col justify-between shadow-sm relative`}>
+                <div>
+                  <span className="inline-block px-2.5 py-1 rounded-full bg-red-600/10 text-red-600 font-extrabold text-[10px] uppercase mb-3">
+                    {f.funil}
+                  </span>
+                  <h4 className={`text-base font-bold ${titleColor} mb-2`}>{f.formato}</h4>
+                  <p className={`text-xs ${subtitleColor} leading-relaxed`}>{f.foco}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (type === 'persona_profile') {
@@ -434,6 +775,97 @@ export function RenderBlock({ slide }: { slide: any }) {
               <p className="text-lg text-zinc-300">{d[`kr${num}_texto`]}</p>
             </div>
           ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (type === 'riscos_dependencias_proximos_passos') {
+    const riscosV4 = d.riscos_v4 || []
+    const riscosCliente = d.riscos_cliente || []
+    const passos = d.proximos_passos_trimestre || []
+
+    return (
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto py-6">
+        {/* Header */}
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 text-red-500 font-bold text-xs uppercase tracking-widest mb-3">
+            Governança & Co-responsabilidade de Execução
+          </span>
+          <h2 className={`text-4xl font-bold ${titleColor} mb-2`}>{d.titulo}</h2>
+          <p className={`text-base ${subtitleColor}`}>
+            {d.subtitulo}
+          </p>
+        </div>
+
+        {/* 1. Matriz de Riscos & Prevenção (Grade 2x2) */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <ShieldAlert className="w-5 h-5 text-red-600" />
+            1. Matriz de Riscos Críticos (Impactos & Planos de Prevenção)
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {(d.riscos_matriz || []).map((item: any, i: number) => {
+              const borderAccent = i === 0 ? 'border-t-red-600' : (i === 1 ? 'border-t-amber-500' : (i === 2 ? 'border-t-indigo-600' : 'border-t-rose-600'));
+              const badgeBg = i === 0 ? 'bg-red-600/10 text-red-600' : (i === 1 ? 'bg-amber-500/10 text-amber-600' : (i === 2 ? 'bg-indigo-600/10 text-indigo-500' : 'bg-rose-600/10 text-rose-600'));
+
+              return (
+                <div key={i} className={`p-6 rounded-3xl border ${cardBg} shadow-xl flex flex-col justify-between border-t-4 ${borderAccent} transition-all duration-300 hover:border-red-500/50`}>
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-center justify-between border-b pb-3 border-zinc-200 dark:border-zinc-800">
+                      <div className="flex items-center gap-3">
+                        <span className={`w-8 h-8 rounded-xl ${badgeBg} font-mono font-bold text-xs flex items-center justify-center shrink-0`}>
+                          0{i + 1}
+                        </span>
+                        <h4 className={`text-lg font-bold ${titleColor}`}>{item.risco}</h4>
+                      </div>
+                    </div>
+
+                    <div className={`p-4 rounded-2xl border ${isLight ? 'bg-rose-50/60 border-rose-200/70' : 'bg-rose-950/20 border-rose-900/40'} flex flex-col gap-1.5`}>
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400 flex items-center gap-1.5">
+                        <AlertTriangle className="w-3.5 h-3.5" /> Impacto na Operação
+                      </span>
+                      <p className={`text-xs md:text-sm leading-relaxed ${isLight ? 'text-zinc-800' : 'text-zinc-200'}`}>
+                        {item.impacto}
+                      </p>
+                    </div>
+
+                    <div className={`p-4 rounded-2xl border ${isLight ? 'bg-emerald-50/70 border-emerald-200/80' : 'bg-emerald-950/20 border-emerald-900/40'} flex flex-col gap-1.5`}>
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5" /> Como Prevenir & Mitigar
+                      </span>
+                      <p className={`text-xs md:text-sm leading-relaxed ${isLight ? 'text-emerald-950' : 'text-emerald-200'}`}>
+                        {item.prevencao || item.mitigacao}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 2. Próximos Passos (Passos 1 ao 4) */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Rocket className="w-5 h-5 text-emerald-500" />
+            2. Próximos Passos & Entregas do 1º Trimestre (Novembro a Janeiro)
+          </h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {passos.map((p: any, i: number) => (
+              <div key={i} className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between shadow-lg relative border-l-4 ${i === 0 ? 'border-l-red-600' : (i === 1 ? 'border-l-indigo-600' : (i === 2 ? 'border-l-blue-600' : 'border-l-emerald-600'))}`}>
+                <div>
+                  <span className="inline-block px-3 py-1 rounded-full bg-red-600/10 text-red-600 font-mono font-bold text-xs mb-3">
+                    {p.passo}
+                  </span>
+                  <h4 className={`text-base font-bold ${titleColor} mb-2`}>{p.titulo}</h4>
+                  <p className={`text-xs ${subtitleColor} leading-relaxed`}>{p.descricao}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     )
@@ -1239,6 +1671,94 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
     );
   }
 
+  if (type === 'drawflow_fase2_longo_prazo') {
+    const fases = d.fases_verticais || [];
+    const inovacoes = d.inovacoes_contextualizadas || [];
+    const iconMap: Record<string, any> = { Send, Users, Sparkles };
+
+    return (
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-red-600/10 text-red-500 font-bold text-xs uppercase tracking-widest mb-3">
+            Planejamento Semestral de Vendas
+          </span>
+          <h2 className={`text-4xl font-bold ${titleColor} mb-3`}>{d.titulo}</h2>
+          {d.subtitulo && <p className={`text-base ${subtitleColor}`}>{d.subtitulo}</p>}
+        </div>
+
+        {/* Vertical Roadmap / Timeline */}
+        <div className="flex flex-col gap-8 relative pl-4 md:pl-8 border-l-2 border-zinc-800">
+          {fases.map((f: any, i: number) => {
+            const isFase2 = i === 1;
+            const isFase3 = i === 2;
+
+            return (
+              <div key={i} className="relative flex flex-col gap-4 group">
+                {/* Timeline Dot */}
+                <div className={`absolute -left-[25px] md:-left-[41px] top-1.5 w-6 h-6 rounded-full border-4 ${isFase2 ? 'border-indigo-500 bg-black' : (isFase3 ? 'border-emerald-500 bg-black' : 'border-red-600 bg-black')}`} />
+
+                <div className={`p-6 md:p-8 rounded-3xl border ${cardBg} shadow-xl flex flex-col gap-4 transition-all duration-300 hover:border-red-500/50`}>
+                  <div className="flex flex-wrap items-center justify-between gap-3 border-b pb-4 border-zinc-200 dark:border-zinc-800">
+                    <div className="flex items-center gap-3">
+                      <span className={`w-8 h-8 rounded-xl ${f.cor_badge || 'bg-red-600'} text-white font-mono font-black text-sm flex items-center justify-center shrink-0`}>
+                        {f.fase_numero}
+                      </span>
+                      <div>
+                        <h3 className={`text-xl md:text-2xl font-bold ${titleColor}`}>{f.titulo_fase}</h3>
+                        <span className="text-xs text-red-500 font-bold uppercase tracking-wider">{f.periodo}</span>
+                      </div>
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${isLight ? 'bg-zinc-100 text-zinc-800' : 'bg-zinc-800 text-zinc-200'}`}>
+                      {f.foco}
+                    </span>
+                  </div>
+
+                  <ul className="space-y-3 pt-2">
+                    {f.topicos?.map((topico: string, idx: number) => (
+                      <li key={idx} className="flex items-start gap-3 text-xs md:text-sm leading-relaxed">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className={isLight ? 'text-zinc-800' : 'text-zinc-200'}>{topico}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* 3 Innovation Cards */}
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-6 flex items-center gap-2`}>
+            <Sparkles className="w-5 h-5 text-amber-500" />
+            Inovações & Alavancas Estratégicas para o Ateliê
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {inovacoes.map((inov: any, i: number) => {
+              const IconComponent = iconMap[inov.icone] || Sparkles;
+              return (
+                <div key={i} className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between shadow-lg hover:-translate-y-1 transition-transform`}>
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2.5 bg-red-600/10 text-red-500 rounded-xl">
+                        <IconComponent className="w-5 h-5" />
+                      </div>
+                      <h4 className={`font-bold text-sm ${titleColor}`}>{inov.titulo}</h4>
+                    </div>
+                    <p className={`text-xs ${subtitleColor} leading-relaxed mb-4`}>{inov.estrategia}</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-800 dark:text-emerald-300 font-medium">
+                    <strong className="text-emerald-600 block mb-0.5">Impacto Projetado:</strong> {inov.impacto}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (type === 'meta_ads_analysis') {
     return (
       <div className="flex flex-col h-full gap-8">
@@ -1352,20 +1872,25 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
     );
   }
 
-  if (type === 'media_projection') {
+  if (type === 'media_projection' || type === 'projecao_comercial_detalhada') {
     const cenarios = d.cenarios || [];
+    const caps = d.capacidade_operacional || [];
+    const funil = d.funil_esmiucado || [];
 
     return (
-      <div className="flex flex-col h-full items-center justify-center py-6 w-full">
-        <div className="text-center max-w-3xl mb-6">
+      <div className="flex flex-col gap-12 w-full max-w-6xl mx-auto py-6">
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-600/10 text-emerald-500 font-bold text-xs uppercase tracking-widest mb-3">
+            Visão Consolidada de Escala & Vendas
+          </span>
           <h2 className={`text-4xl font-bold ${titleColor} mb-2`}>{d.titulo}</h2>
           <p className={`text-base ${subtitleColor}`}>
-            {d.subtitulo || "Projeção de resultados com base nas taxas de conversão de 10,5% a 13,5%"}
+            {d.subtitulo || "Integração de cenários de tráfego, capacidade operacional do ateliê e esmiuçamento do funil comercial"}
           </p>
         </div>
 
-        {/* Top Input Parameters Bar matching attachment */}
-        <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        {/* Top Input Parameters Bar */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className={`p-4 rounded-2xl border ${isLight ? 'bg-zinc-50 border-zinc-200' : 'bg-zinc-900 border-zinc-800'} flex flex-col gap-1`}>
             <span className="text-xs uppercase font-bold text-zinc-500">Verba Mensal (R$)</span>
             <span className={`text-2xl font-black ${titleColor}`}>{d.orcamento || "R$ 30.000"}</span>
@@ -1386,89 +1911,162 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
           </div>
         </div>
 
+        {/* Top Operational Metrics */}
+        {caps.length > 0 && (
+          <div>
+            <h3 className={`text-xl font-bold ${titleColor} mb-4 flex items-center gap-2`}>
+              <Activity className="w-5 h-5 text-red-600" />
+              Capacidade Operacional & Atendimento
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {caps.map((c: any, i: number) => (
+                <div key={i} className={`p-6 rounded-2xl border ${cardBg} flex flex-col justify-between border-l-4 border-l-red-600 shadow-xl`}>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-zinc-500 block mb-1">{c.métrica}</span>
+                    <span className="text-3xl font-black text-red-600 block mb-2">{c.valor}</span>
+                    <p className={`text-xs ${subtitleColor} leading-relaxed`}>{c.detalhe}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* 3 Scenarios Grid */}
-        <div className="w-full max-w-5xl grid md:grid-cols-3 gap-6 mb-8">
-          {cenarios.map((cenario: any, i: number) => {
-            const isRealista = cenario.nome === "Realista";
-            let color = 'text-amber-500';
-            let bg = isLight ? 'bg-amber-50' : 'bg-amber-950/30';
-            let border = 'border-amber-300 dark:border-amber-800';
-            let headerBg = 'bg-amber-500';
-            
-            if (i === 1 || isRealista) { 
-              color = 'text-red-600'; 
-              bg = isLight ? 'bg-red-50/60' : 'bg-red-950/30'; 
-              border = 'border-red-600 border-2 shadow-red-900/20'; 
-              headerBg = 'bg-red-600';
-            }
-            if (i === 2) { 
-              color = 'text-emerald-500'; 
-              bg = isLight ? 'bg-emerald-50' : 'bg-emerald-950/30'; 
-              border = 'border-emerald-300 dark:border-emerald-800'; 
-              headerBg = 'bg-emerald-600';
-            }
+        <div>
+          <h3 className={`text-xl font-bold ${titleColor} mb-4 flex items-center gap-2`}>
+            <BarChart2 className="w-5 h-5 text-emerald-500" />
+            3 Cenários de Desempenho no Meta Ads
+          </h3>
+          <div className="w-full grid md:grid-cols-3 gap-6">
+            {cenarios.map((cenario: any, i: number) => {
+              const isRealista = cenario.nome === "Realista";
+              let color = 'text-amber-500';
+              let bg = isLight ? 'bg-amber-50' : 'bg-amber-950/30';
+              let border = 'border-amber-300 dark:border-amber-800';
+              let headerBg = 'bg-amber-500';
+              
+              if (i === 1 || isRealista) { 
+                color = 'text-red-600'; 
+                bg = isLight ? 'bg-red-50/60' : 'bg-red-950/30'; 
+                border = 'border-red-600 border-2 shadow-red-900/20'; 
+                headerBg = 'bg-red-600';
+              }
+              if (i === 2) { 
+                color = 'text-emerald-500'; 
+                bg = isLight ? 'bg-emerald-50' : 'bg-emerald-950/30'; 
+                border = 'border-emerald-300 dark:border-emerald-800'; 
+                headerBg = 'bg-emerald-600';
+              }
 
-            return (
-              <div key={i} className={`${cardBg} rounded-3xl p-6 border-2 ${border} shadow-xl flex flex-col justify-between relative overflow-hidden`}>
-                <div className={`absolute top-0 inset-x-0 h-2 ${headerBg}`} />
-                
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <span className={`text-xs font-bold uppercase tracking-wider ${color}`}>Cenário {cenario.nome}</span>
-                    <span className={`px-3 py-1 rounded-full text-xs font-black text-white ${headerBg}`}>
-                      ROAS {cenario.roas}
-                    </span>
+              return (
+                <div key={i} className={`${cardBg} rounded-3xl p-6 border-2 ${border} shadow-xl flex flex-col justify-between relative overflow-hidden`}>
+                  <div className={`absolute top-0 inset-x-0 h-2 ${headerBg}`} />
+                  
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className={`text-xs font-bold uppercase tracking-wider ${color}`}>Cenário {cenario.nome}</span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-black text-white ${headerBg}`}>
+                        ROAS {cenario.roas}
+                      </span>
+                    </div>
+
+                    <div className="mb-4">
+                      <span className="text-4xl font-black block">{cenario.conversas}</span>
+                      <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">conversas no mês</span>
+                    </div>
+
+                    <div className={`space-y-2.5 text-xs ${isLight ? 'text-zinc-600' : 'text-zinc-300'} mb-6 border-t border-b py-4 border-zinc-200 dark:border-zinc-800`}>
+                      <div className="flex justify-between">
+                        <span>Custo por conversa:</span>
+                        <strong className={color}>{cenario.custo_conversa}</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Conversas por dia:</span>
+                        <strong className={titleColor}>{cenario.conversas_dia}</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Taxa de venda:</span>
+                        <strong className="text-emerald-600 font-bold">{cenario.taxa_venda}</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Vendas no mês:</span>
+                        <strong className="text-indigo-600 font-bold">{cenario.pedidos} vendas</strong>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Custo por venda (CPA):</span>
+                        <strong className="text-red-600 font-bold">{cenario.custo_venda || cenario.cpa}</strong>
+                      </div>
+                      <div className="flex justify-between pt-2 border-t border-dashed border-zinc-200 dark:border-zinc-800">
+                        <span className="font-bold text-sm">Faturamento:</span>
+                        <strong className="text-base font-black text-emerald-600">{cenario.faturamento}</strong>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="mb-4">
-                    <span className="text-4xl font-black block">{cenario.conversas}</span>
-                    <span className="text-xs text-zinc-500 uppercase tracking-wider font-semibold">conversas no mês</span>
-                  </div>
-
-                  <div className={`space-y-2.5 text-xs ${isLight ? 'text-zinc-600' : 'text-zinc-300'} mb-6 border-t border-b py-4 border-zinc-200 dark:border-zinc-800`}>
-                    <div className="flex justify-between">
-                      <span>Custo por conversa:</span>
-                      <strong className={color}>{cenario.custo_conversa}</strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Conversas por dia:</span>
-                      <strong className={titleColor}>{cenario.conversas_dia}</strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Taxa de venda:</span>
-                      <strong className="text-emerald-600 font-bold">{cenario.taxa_venda}</strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Vendas no mês:</span>
-                      <strong className="text-indigo-600 font-bold">{cenario.pedidos} vendas</strong>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Custo por venda (CPA):</span>
-                      <strong className="text-red-600 font-bold">{cenario.custo_venda || cenario.cpa}</strong>
-                    </div>
-                    <div className="flex justify-between pt-2 border-t border-dashed border-zinc-200 dark:border-zinc-800">
-                      <span className="font-bold text-sm">Faturamento:</span>
-                      <strong className="text-base font-black text-emerald-600">{cenario.faturamento}</strong>
-                    </div>
+                  <div className={`${bg} p-3 rounded-xl text-center text-xs ${isLight ? 'text-zinc-700' : 'text-zinc-300'} leading-relaxed`}>
+                    {cenario.descricao}
                   </div>
                 </div>
-
-                <div className={`${bg} p-3 rounded-xl text-center text-xs ${isLight ? 'text-zinc-700' : 'text-zinc-300'} leading-relaxed`}>
-                  {cenario.descricao}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
+
+        {/* Funil Comercial Esmiuçado (Table) */}
+        {funil.length > 0 && (
+          <div className={`p-6 rounded-3xl border ${cardBg} shadow-2xl flex flex-col gap-6`}>
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-4 border-zinc-200 dark:border-zinc-800">
+              <div>
+                <h3 className={`text-xl font-bold ${titleColor}`}>
+                  Esmiuçamento do Funil Comercial Etapa por Etapa
+                </h3>
+                <p className={`text-xs mt-1 ${subtitleColor}`}>
+                  Projeção de passagem em cada nível: Conversas → MQL (75-85%) → SQL (40-45%) → Vendas Fechadas (10,5-13,5%)
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto rounded-2xl border border-zinc-200 dark:border-zinc-800">
+              <table className="w-full text-left text-xs font-sans">
+                <thead className={`${isLight ? 'bg-zinc-100 text-zinc-700' : 'bg-zinc-950 text-zinc-300'} uppercase font-bold border-b border-zinc-200 dark:border-zinc-800`}>
+                  <tr>
+                    <th className="py-3.5 px-4">Etapa do Funil Comercial</th>
+                    <th className="py-3.5 px-3 text-amber-600">Conservador</th>
+                    <th className="py-3.5 px-3 text-red-600">Realista (Meta)</th>
+                    <th className="py-3.5 px-3 text-emerald-600">Otimista</th>
+                    <th className="py-3.5 px-4">Observação / Métricas</th>
+                  </tr>
+                </thead>
+                <tbody className={`divide-y ${isLight ? 'divide-zinc-200 bg-white' : 'divide-zinc-800 bg-zinc-900/50'}`}>
+                  {funil.map((row: any, i: number) => {
+                    const isTotal = i === funil.length - 1;
+                    return (
+                      <tr key={i} className={`${isTotal ? 'bg-red-600/10 font-bold' : 'hover:bg-zinc-50 dark:hover:bg-zinc-800/50'} transition-colors`}>
+                        <td className={`py-3.5 px-4 ${isTotal ? 'text-red-500 font-extrabold text-sm' : titleColor}`}>
+                          {row.etapa}
+                        </td>
+                        <td className="py-3.5 px-3 font-mono font-semibold text-amber-600">{row.conservador}</td>
+                        <td className="py-3.5 px-3 font-mono font-black text-red-600">{row.realista}</td>
+                        <td className="py-3.5 px-3 font-mono font-semibold text-emerald-600">{row.otimista}</td>
+                        <td className={`py-3.5 px-4 text-[11px] ${subtitleColor}`}>{row.observacao}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
 
         {/* Alcance Estimado Callout */}
         {d.alcance_estimado && (
-          <div className={`max-w-5xl w-full ${isLight ? 'bg-blue-50 border-blue-200' : 'bg-blue-950/20 border-blue-900/50'} border p-5 rounded-2xl flex items-start gap-4`}>
+          <div className={`w-full ${isLight ? 'bg-blue-50 border-blue-200' : 'bg-blue-950/20 border-blue-900/50'} border p-5 rounded-2xl flex items-start gap-4`}>
             <div className="p-3 bg-blue-600 text-white rounded-xl shrink-0">
               <Target className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-blue-700 dark:text-blue-400 font-bold text-base mb-1">Síntese da Projeção de Mídia</h4>
+              <h4 className="text-blue-700 dark:text-blue-400 font-bold text-base mb-1">Síntese da Projeção Integrada</h4>
               <p className={`text-xs md:text-sm ${isLight ? 'text-blue-900/90' : 'text-blue-200/90'} leading-relaxed`}>
                 {d.alcance_estimado}
               </p>
@@ -1497,7 +2095,7 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
                  <a href={d.link_planilha} target="_blank" rel="noreferrer" 
                     className="group flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl transition-colors shadow-lg shadow-red-900/20">
                     <FileSpreadsheet className="w-5 h-5" />
-                    Acessar {d.tipo_planilha} Completa
+                    {d.texto_botao || `Acessar ${d.tipo_planilha}`}
                     <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                  </a>
                </div>

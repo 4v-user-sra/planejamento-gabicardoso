@@ -47,7 +47,7 @@ export const presentationData = {
           "Benchmarking e Concorrência",
           "Identidade Visual & Manual de Copy",
           "Personas e Público-Alvo",
-          "Objetivo SMART (60 Dias) & KPIs",
+          "Objetivo SMART (90 Dias) & KPIs",
           "Drawflow Funil Fast Traffic (Meses 1-2)",
           "Visão 3 a 6 Meses (Escala Robusta & Comunidade)",
           "Cronograma de Entregas & Playbook",
@@ -247,7 +247,7 @@ export const presentationData = {
           },
           "praca": {
             "titulo": "Praça",
-            "descricao": "Venda direta nacional via WhatsApp Business + Landing Page interativa. Ateliê centralizado com logística rápida via Correios e Jadlog."
+            "descricao": "Venda direta via WhatsApp (Meta Ads)+ Landing Page, dentro da estrutura de Inside Sales"
           },
           "promocao": {
             "titulo": "Promoção",
@@ -470,12 +470,12 @@ export const presentationData = {
         "subtitulo": "Diretrizes oficiais de comunicação, posicionamento de marca e matriz de formatos para o time criativo",
         "arquetipos": [
           {
-            "nome": "O Cuidador / Prestativo (Caregiver)",
+            "nome": "Cuidador",
             "papel": "Arquétipo Principal",
             "descricao": "Acolhimento materno, carinho em cada ponto de bordado, proteção para a pele sensível do recém-nascido e segurança absoluta para a mãe."
           },
           {
-            "nome": "O Criador / Artesão (Creator)",
+            "nome": "Artesão",
             "papel": "Arquétipo Secundário",
             "descricao": "Tradição de 10 anos da família Gabi e Maicon transformando tecidos nobres em obras de arte afetivas e exclusivas com o nome do bebê."
           }
@@ -587,9 +587,9 @@ export const presentationData = {
       "id": "17_objetivo_smart",
       "slide_type": "smart_goal_okr",
       "content_slots": {
-        "titulo": "Objetivos e Metas SMART (Próximos 60 Dias)",
+        "titulo": "Objetivos e Metas SMART (Próximos 90 Dias)",
         "fase_projeto": "Estabilização Comercial & Maturação de Indicadores",
-        "objetivo_geral": "Manter a escala de faturamento atual no patamar de R$ 150.000 a R$ 180.000/mês nos próximos 60 dias, maturando e consolidando os indicadores históricos já coletados no gerenciador do Meta Ads sem necessariamente aumentar o investimento em mídia nesse primeiro período, encontrando estabilidade e previsibilidade na operação.",
+        "objetivo_geral": "Manter a escala de faturamento atual no patamar de R$ 150.000 a R$ 180.000/mês nos próximos 90 dias, maturando e consolidando os indicadores históricos já coletados no gerenciador do Meta Ads sem necessariamente aumentar o investimento em mídia nesse primeiro período, encontrando estabilidade e previsibilidade na operação.",
         "kr1_texto": "Custo por Conversa no Meta Ads: Manter o custo por conversa iniciada entre R$ 3,00 e R$ 4,00 no WhatsApp/Direct, consolidando o patamar saudável já validado na conta.",
         "kr2_texto": "Volume Diário de Captação: Sustentar a geração contínua de 250 a 300 conversas iniciadas por dia, garantindo o fluxo constante de demanda comercial.",
         "kr3_texto": "Mapeamento do Funil Comercial: Mapear 100% das etapas de qualificação — de conversas iniciadas a MQLs (leads que respondem), SQLs (leads com orçamento) e taxa de fechamento final.",

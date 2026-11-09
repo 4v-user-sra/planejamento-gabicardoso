@@ -1630,7 +1630,6 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
                     <span className="text-lg font-black block text-emerald-800 dark:text-emerald-300">
                       Acompanhamento de Etapas & Gestão Comercial no Kommo CRM
                     </span>
-                    <span className="text-[10px] bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded-full font-bold">Etiquetagem & Funil Kommo</span>
                   </div>
                   <p className={`text-xs ${isLight ? 'text-emerald-900' : 'text-emerald-200'} leading-relaxed`}>
                     Com o acompanhamento dentro do Kommo, temos a etiquetagem automática e o controle de todas as etapas do funil para rastrear com precisão o volume de vendas e a conversão de cada fase comercial.
@@ -2055,21 +2054,6 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
                   })}
                 </tbody>
               </table>
-            </div>
-          </div>
-        )}
-
-        {/* Alcance Estimado Callout */}
-        {d.alcance_estimado && (
-          <div className={`w-full ${isLight ? 'bg-blue-50 border-blue-200' : 'bg-blue-950/20 border-blue-900/50'} border p-5 rounded-2xl flex items-start gap-4`}>
-            <div className="p-3 bg-blue-600 text-white rounded-xl shrink-0">
-              <Target className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-blue-700 dark:text-blue-400 font-bold text-base mb-1">Síntese da Projeção Integrada</h4>
-              <p className={`text-xs md:text-sm ${isLight ? 'text-blue-900/90' : 'text-blue-200/90'} leading-relaxed`}>
-                {d.alcance_estimado}
-              </p>
             </div>
           </div>
         )}

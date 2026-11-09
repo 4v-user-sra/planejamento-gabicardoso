@@ -33,7 +33,8 @@ const themeMap: Record<string, string> = {
   "18b_drawflow_fase2_longo_prazo": "bg-zinc-900 text-zinc-100 border-zinc-800",
   "19_cronograma": "bg-white text-zinc-900 border-zinc-200",
   "20_plano_midia": "bg-zinc-50 text-zinc-900 border-zinc-200",
-  "21_riscos_dependencias_proximos_passos": "bg-zinc-950 text-zinc-300 border-zinc-900"
+  "21_riscos_dependencias_proximos_passos": "bg-zinc-950 text-zinc-300 border-zinc-900",
+  "22_agradecimento": "bg-zinc-950 text-zinc-300 border-zinc-900"
 }
 
 // Helper to determine section background based on type
@@ -44,6 +45,7 @@ export function getSectionTheme(id: string, type: string) {
   if (['moodboard_identity', 'spreadsheet_placeholder', 'matriz_cvba_oferta'].includes(type)) return 'bg-white text-zinc-900 border-zinc-200'
   if (['process_timeline', 'funnel_flow_diagram', 'visual_drawflow', 'drawflow_fase2_longo_prazo'].includes(type)) return 'bg-black text-zinc-300 border-zinc-900'
   if (['smart_goal_okr', 'projecao_comercial_detalhada', 'riscos_dependencias_proximos_passos'].includes(type)) return 'bg-zinc-900 text-zinc-300 border-zinc-800'
+  if (type === 'thank_you') return 'bg-zinc-950 text-zinc-300 border-zinc-900'
   return 'bg-zinc-950 text-zinc-300 border-zinc-900'
 }
 
@@ -82,6 +84,17 @@ export function RenderBlock({ slide }: { slide: any }) {
         <div className="pt-16 flex flex-col items-center gap-4 text-zinc-500">
           <p className="text-lg tracking-wide uppercase">{d.data_apresentacao}</p>
         </div>
+      </div>
+    )
+  }
+
+  if (type === 'thank_you') {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-6 max-w-4xl mx-auto py-12">
+        <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
+          {d.titulo_principal || "Muito Obrigado!"}
+        </h1>
+        <div className="h-1.5 w-24 bg-red-600 rounded-full" />
       </div>
     )
   }

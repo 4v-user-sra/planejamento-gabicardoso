@@ -907,6 +907,18 @@ export const presentationData = {
           }
         ]
       }
+    },
+    {
+      "id": "22_agradecimento",
+      "slide_type": "thank_you",
+      "content_slots": {
+        "titulo_principal": "Muito Obrigado!",
+        "mensagem": "Estamos prontos para acelerar o crescimento do Ateliê Gabi Cardoso com estratégia, processos e escala previsível.",
+        "marca": "GABI CARDOSO ARTESANATO",
+        "parceria": "V4 COMPANY | NUNES & CO",
+        "socios": "Gabriela Bailoni & Maicon William Cardoso",
+        "contato_site": "@gabicardosoartesanato • v4company.com"
+      }
     }
   ]
 };

@@ -114,7 +114,7 @@ export const presentationData = {
           },
           {
             "titulo": "Falta de um Catálogo Virtual Interativo",
-            "texto": "Sem uma página tipo 'Monte seu Enxoval' para a cliente ver estampas, cores e bordados, o público chegava cru no WhatsApp, exigindo horas de digitação manual.",
+            "texto": "Sem uma página tipo 'Monte seu Enxoval' para a cliente ver estampas, cores e bordados, o público chega cru no WhatsApp.",
             "tipo": "negativo"
           },
           {

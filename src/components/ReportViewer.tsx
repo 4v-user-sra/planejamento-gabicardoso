@@ -1510,10 +1510,6 @@ const MetaAdsRaioXComponent = ({ d, isLight }: { d: any; isLight: boolean }) => 
               {d.subtitulo || "Consolidação de 77 campanhas dispersas em 5 eixos estratégicos fixos + etiquetas no WhatsApp e CAPI fechado"}
             </p>
           </div>
-          <div className="px-5 py-2.5 rounded-xl bg-red-600/10 border border-red-500/30 text-red-600 font-bold text-sm flex items-center gap-2 self-start">
-            <Target className="w-4 h-4" />
-            Meta: 40 a 50 Pedidos / Dia
-          </div>
         </div>
         
         <div className="min-w-[1000px] w-full flex flex-col items-center relative">
